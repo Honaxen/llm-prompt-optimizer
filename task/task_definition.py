@@ -58,23 +58,29 @@ def normalize_date(raw: str) -> str | None:
     Attempts to parse a variety of date formats into YYYY-MM-DD.
     Returns None if parsing fails -- a failed parse counts as a wrong
     answer for that field, not a crash.
+
+    Formats without a year (e.g. "March 22") are skipped entirely rather
+    than parsed with an assumed default year -- Python's own strptime
+    behavior for yearless dates is documented as ambiguous and changing
+    in 3.15, so this avoids relying on it at all instead of working
+    around the deprecation warning.
     """
     raw = raw.strip()
-    formats = [
-        "%Y-%m-%d", "%m/%d/%Y", "%m/%d/%y", "%B %d, %Y", "%B %d",
-        "%b %d, %Y", "%b %d", "%m/%d", "%d %B %Y",
+    formats_with_year = [
+        "%Y-%m-%d", "%m/%d/%Y", "%m/%d/%y", "%B %d, %Y",
+        "%b %d, %Y", "%d %B %Y",
     ]
-    for fmt in formats:
+    for fmt in formats_with_year:
         try:
             parsed = datetime.strptime(raw, fmt)
-            # Formats without a year parse to year 1900 -- not meaningful
-            # for comparison, so those are treated as unparseable rather
-            # than silently wrong.
-            if parsed.year == 1900:
-                return None
             return parsed.strftime("%Y-%m-%d")
         except ValueError:
             continue
+
+    # Yearless formats ("March 22", "3/22") are recognized as *shaped like*
+    # a date but deliberately not resolved to a specific year -- treated
+    # the same as unparseable, since a date without a year isn't something
+    # this task's scoring can compare against a fixed expected date anyway.
     return None
 
 
