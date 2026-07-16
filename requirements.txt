@@ -1,0 +1,6 @@
+# Root requirements for llm-prompt-optimizer.
+# Every script uses only the standard library (json, re, urllib, argparse)
+# to talk to Ollama directly -- no LLM SDK dependency needed.
+
+# --- Testing ---
+pytest
