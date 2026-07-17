@@ -1,0 +1,150 @@
+{
+  "prompt": "Extract the expense information from the following text. Return the vendor, amount, date, and category.\n\nText: {input}\n\nRespond with the extracted information.",
+  "average_score": 0.0,
+  "results": [
+    {
+      "input": "Grabbed lunch with Sarah at Chipotle for $14.50 on June 3rd",
+      "expected": {
+        "vendor": "Chipotle",
+        "amount": 14.5,
+        "date": "2024-06-03",
+        "category": "food"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Chipotle\n*   **Amount:** $14.50\n*   **Date:** June 3rd\n*   **Category:** Lunch (or Dining/Food)",
+      "score": 0.0
+    },
+    {
+      "input": "Paid the electric bill, $89.23, due 07/15/2024",
+      "expected": {
+        "vendor": "electric company",
+        "amount": 89.23,
+        "date": "2024-07-15",
+        "category": "utilities"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Electric Company (implied - \"electric bill\")\n*   **Amount:** $89.23\n*   **Date:** 07/15/2024\n*   **Category:** Utilities (specifically, Electricity)",
+      "score": 0.0
+    },
+    {
+      "input": "Uber ride home last night cost about twenty bucks, March 22",
+      "expected": {
+        "vendor": "Uber",
+        "amount": 20.0,
+        "date": "2024-03-22",
+        "category": "transport"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Uber\n*   **Amount:** $20.00\n*   **Date:** March 22\n*   **Category:** Transportation (or Ride-Sharing)",
+      "score": 0.0
+    },
+    {
+      "input": "Bought a new jacket at Zara for $64.99 yesterday (2024-11-05)",
+      "expected": {
+        "vendor": "Zara",
+        "amount": 64.99,
+        "date": "2024-11-05",
+        "category": "shopping"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Zara\n*   **Amount:** $64.99\n*   **Date:** 2024-11-05\n*   **Category:** Clothing (or Apparel)",
+      "score": 0.0
+    },
+    {
+      "input": "Movie tickets for two, AMC theater, $28, Feb 14th",
+      "expected": {
+        "vendor": "AMC",
+        "amount": 28.0,
+        "date": "2024-02-14",
+        "category": "entertainment"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** AMC theater\n*   **Amount:** $28\n*   **Date:** Feb 14th\n*   **Category:** Entertainment (Movie Tickets)",
+      "score": 0.0
+    },
+    {
+      "input": "Coffee at Blue Bottle this morning, 5 dollars 50 cents, 9/1",
+      "expected": {
+        "vendor": "Blue Bottle",
+        "amount": 5.5,
+        "date": "2024-09-01",
+        "category": "food"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Blue Bottle\n*   **Amount:** $5.50\n*   **Date:** 9/1\n*   **Category:** Coffee",
+      "score": 0.0
+    },
+    {
+      "input": "Gas station fill-up, $52.10, on the 12th of April",
+      "expected": {
+        "vendor": "gas station",
+        "amount": 52.1,
+        "date": "2024-04-12",
+        "category": "transport"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Gas station\n*   **Amount:** $52.10\n*   **Date:** April 12th\n*   **Category:** Transportation (or Fuel)",
+      "score": 0.0
+    },
+    {
+      "input": "Water bill payment of $34 on 2024-08-20",
+      "expected": {
+        "vendor": "water company",
+        "amount": 34.0,
+        "date": "2024-08-20",
+        "category": "utilities"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Water Company (implied)\n*   **Amount:** $34\n*   **Date:** 2024-08-20\n*   **Category:** Utilities (Water)",
+      "score": 0.0
+    },
+    {
+      "input": "Got groceries at Trader Joe's, came out to $76.34, October 9",
+      "expected": {
+        "vendor": "Trader Joe's",
+        "amount": 76.34,
+        "date": "2024-10-09",
+        "category": "shopping"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Trader Joe's\n*   **Amount:** $76.34\n*   **Date:** October 9\n*   **Category:** Groceries",
+      "score": 0.0
+    },
+    {
+      "input": "Concert ticket, Ticketmaster, ninety-five dollars, on 5/30/2024",
+      "expected": {
+        "vendor": "Ticketmaster",
+        "amount": 95.0,
+        "date": "2024-05-30",
+        "category": "entertainment"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Ticketmaster\n*   **Amount:** $95.00\n*   **Date:** 5/30/2024\n*   **Category:** Concert/Entertainment",
+      "score": 0.0
+    },
+    {
+      "input": "Dinner at that new Thai place, $41.20, last Friday which was Jan 26",
+      "expected": {
+        "vendor": "Thai place",
+        "amount": 41.2,
+        "date": "2024-01-26",
+        "category": "food"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Thai place (unspecified name)\n*   **Amount:** $41.20\n*   **Date:** January 26\n*   **Category:** Dinner (or Food/Restaurant)",
+      "score": 0.0
+    },
+    {
+      "input": "Parking downtown, $15, December 3rd",
+      "expected": {
+        "vendor": "parking",
+        "amount": 15.0,
+        "date": "2024-12-03",
+        "category": "transport"
+      },
+      "predicted": null,
+      "raw_output": "Here's the extracted expense information:\n\n*   **Vendor:** Parking downtown\n*   **Amount:** $15\n*   **Date:** December 3rd\n*   **Category:** Transportation (or Parking)",
+      "score": 0.0
+    }
+  ]
+}
